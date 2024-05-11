@@ -3,7 +3,7 @@
  
 YourWorkout is a website that integrates activity monitoring functions and allows you to select personalized training plans. It is a kind of "fitness friend" that helps users track their progress, motivates them to achieve their goals and supports them in the process of a healthy lifestyle.
 
-##How to Get Started
+## How to Get Started
 
 1. Clone the repository: git clone repository_address
 2. Install dependencies: npm install
