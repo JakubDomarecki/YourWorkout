@@ -24,7 +24,6 @@ const MainLayout = () => {
             <div className="main_container">
                 <header>
                     <h2>YourWorkout</h2>
-
                     <nav>
                         <ul className="header_list">
                             <li className="list_link">
@@ -43,7 +42,7 @@ const MainLayout = () => {
                 <Outlet/>
 
                 <footer>
-                    <div className="footer_contact">
+                <div className="footer_contact">
                         <div className="footer_contact_home">
                             <ul className="header_list">
                                 <li className="list_link_footer_home">
