@@ -2,22 +2,8 @@ import React from "react";
 import {Link, NavLink, Outlet} from "react-router-dom";
 import "../SCSS/main.scss"
 import "../SCSS/componentsScss/MainLayout.scss"
+import CustomNavLink from "../js/CustomNavLink";
 const MainLayout = () => {
-
-    const CustomNavLink = ({ to, children }) => {
-        return (
-            <NavLink
-                to={to}
-                style={({ isActive }) =>
-                    isActive
-                        ? { color: "black", fontSize: "22px" }
-                        : { color: "gray", fontSize: "22px" }
-                }
-            >
-                {children}
-            </NavLink>
-        );
-    };
 
     return (
         <>
