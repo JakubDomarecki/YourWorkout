@@ -1,0 +1,27 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  max-width: 1750px;
+  margin: 0 auto;
+  background-color: orange;
+}
+.main_container {
+  width: 100%;
+  max-width: 1550px;
+  margin: 0 auto;
+  background-color: orange;
+};
+main{
+  height: calc(100vh - 180px);
+  @media (max-width: 1600px) {
+    padding-inline: 3rem;
+  }
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
