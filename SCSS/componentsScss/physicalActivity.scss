@@ -1,0 +1,43 @@
+@import "../variables";
+//form
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  &__label{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $secondary--color;
+    line-height: 0.9rem;
+    letter-spacing: 3px;
+    font-size: 0.6875rem;
+  }
+  &__input{
+    border: none;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+    line-height: 2.625rem;
+    padding-left: 0.5rem;
+  }
+  }
+
+  .btn--primary {
+    padding: 10px 1rem;
+    margin-bottom: 1rem;
+    width: 150px;
+    background-color: $secondary--color;
+    color: $primary--color;
+  }
+
+//table
+
+
+
+
+
+
