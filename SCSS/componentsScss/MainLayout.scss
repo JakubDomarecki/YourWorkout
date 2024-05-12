@@ -1,15 +1,20 @@
+@import "../variables";
 header{
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 90px;
-  background-color: orange;
+  background-color: $primary--color;
   @media (max-width: 1600px) {
     padding-inline: 3rem;
   }
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
+  }
+
+  @media (max-width: 540px) {
+    height: 280px;
   }
 }
 .header_list{
@@ -40,7 +45,7 @@ footer{
   display: flex;
   justify-content: space-between;
   height: 90px;
-  background-color: orange;
+  background-color: $primary--color;
   align-items: center;
   font-family: Arial, serif;
   @media (max-width: 1600px) {
@@ -57,6 +62,9 @@ footer{
   }
   @media (max-width: 410px ) {
   height: 100px;
+  }
+  @media (max-width: 410px) {
+    height: 400px;
   }
 }
 .footer_contact{
