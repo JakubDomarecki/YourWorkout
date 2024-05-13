@@ -5,6 +5,7 @@ header{
   align-items: center;
   height: 90px;
   background-color: $primary--color;
+  border-bottom: 1px solid black;
   @media (max-width: 1600px) {
     padding-inline: 3rem;
   }
