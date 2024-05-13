@@ -1,4 +1,11 @@
 @import "../variables";
+
+.PhysicalActivityBody{
+  @media (max-width: 1600px) {
+    margin: 2rem;
+  }
+}
+
 //form
 .form {
   display: flex;
@@ -35,6 +42,15 @@
   }
 
 //table
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+td, th{
+  text-align: center;
+ border: 1px solid black;
+  padding: 1rem;
+}
 
 
 

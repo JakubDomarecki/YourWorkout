@@ -3,11 +3,25 @@ import "../SCSS/main.scss"
 import "../SCSS/componentsScss/physicalActivity.scss"
 
 const PhysicalActivity = () => {
-   const [currentDate, setCurrentDate] = useState(new Date());
+    const [date, setDate] = useState();
+    const [exercise, setExercise] = useState();
+    const [series, setSeries] = useState()
+    const [weight, setWeight] = useState();
+    const [repetitions, setRepetitions] = useState();
+
+    const handleDateInput = (e) => {
+        const newDate = e.target.value;
+        setDate(newDate);
+    }
 
    return (
        <div className="PhysicalActivityBody">
            <form className="form">
+               <div className="form__field">
+                   <label className="form__label">Date</label>
+                   <input type="date" className="form__input" value={dateInput}/>
+               </div>
+
                <div className="form__field">
                    <label className="form__label">Exercise</label>
                    <input type="text" className="form__input"/>
@@ -30,15 +44,33 @@ const PhysicalActivity = () => {
                <button type="submit" className="btn--primary">ADD</button>
            </form>
 
-           <table border="1">
+           <table>
                <thead>
                <tr>
+                   <th>Data</th>
                    <th>Exercise</th>
                    <th>series</th>
                    <th>weight</th>
                    <th>the number of repetitions</th>
                </tr>
                </thead>
+               <tbody>
+               <tr>
+                   <td>15.05.2024</td>
+                   <td>Martwy ciąg</td>
+                   <td>3</td>
+                   <td>180</td>
+                   <td>8</td>
+               </tr>
+               <tr>
+                   <td>15.05.2024</td>
+                   <td>Martwy ciąg</td>
+                   <td>3</td>
+                   <td>180</td>
+                   <td>8</td>
+               </tr>
+
+               </tbody>
            </table>
        </div>
    );
