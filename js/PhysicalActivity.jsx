@@ -19,7 +19,7 @@ const PhysicalActivity = () => {
            <form className="form">
                <div className="form__field">
                    <label className="form__label">Date</label>
-                   <input type="date" className="form__input" value={dateInput}/>
+                   <input type="date" className="form__input" value={date}/>
                </div>
 
                <div className="form__field">
