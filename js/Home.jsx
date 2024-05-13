@@ -5,11 +5,11 @@ const Home = () => {
      <main>
          <div className='home_description'>
              <h2>YourWorkout</h2>
-             <p>YourWorkout to strona, która integruje funkcje monitorowania aktywności fizycznej i żywienia, pozwala na
-                 wybór
-                 spersonalizowanych planów treningowych. Jest to swoisty "przyjaciel fitnesowy", który pomaga
-                 użytkownikom śledzić
-                 ich postępy, motywuje do osiągania celów i wspiera w procesie zdrowego stylu życia.
+             <p>YourWorkout is a website that integrates the functions of monitoring physical activity, allowing you to
+                 choice
+                 personalized training plans. It is a kind of "fitness friend" that helps
+                 users to follow
+                 their progress, motivates them to achieve their goals and supports them in the process of a healthy <lifestyle className=""></lifestyle>
              </p>
          </div>
          <div className="home_photo">
