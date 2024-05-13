@@ -10,8 +10,8 @@ const PhysicalActivity = () => {
     const [repetitions, setRepetitions] = useState();
 
     const handleDateInput = (e) => {
-        const newDate = e.target.value;
-        setDate(newDate);
+        const NewDate = e.target.value;
+        setDate(NewDate);
     }
 
    return (
