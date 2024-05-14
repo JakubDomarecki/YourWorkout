@@ -32,14 +32,9 @@
     padding-left: 0.5rem;
   }
   }
-
-  .btn{
-    padding: 10px 1rem;
-    margin-bottom: 1rem;
-    width: 150px;
-    background-color: $secondary--color;
-    color: $primary--color;
-  }
+.btn_add{
+  align-self: flex-start;
+}
 
 //table
 table{

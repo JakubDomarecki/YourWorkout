@@ -21,7 +21,9 @@ const PhysicalActivity = () => {
     //errMessage
     const [errMsg, setErrMsg] = useState("");
     const [errMsgOFF, setErrMsgOFF] = useState(false);
-    //
+
+
+    //pokazuje formularz
     const [isShow, setIsShow] = useState(true);
 
 
@@ -46,9 +48,10 @@ const PhysicalActivity = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(formData.date === "" || formData.exercise === "" || formData.series === ""  || formData.weight  === "" || formData.repetitions === "" ) {
-            setErrMsg("fields cannot be empty")
-            setErrMsgOFF(true);
+        if (!formData.date || !formData.exercise || !formData.series || !formData.weight || !formData.repetitions) {
+            setErrMsg('All fields are required.');
+        } else if (formData.series <= 0 || formData.weight <= 0 || formData.repetitions <= 0) {
+            setErrMsg('Series, weight, and repetitions must be greater than 0.');
         } else {
             setErrMsg("");
             setErrMsgOFF(false);
@@ -96,42 +99,43 @@ const PhysicalActivity = () => {
             <button onClick={handleToogleButtonShow} className="toogle_button btn">{isShow ? "hide form" : "show form"}</button>
 
             {isShow &&
-            <form className="form" onSubmit={handleSubmit}>
-                <p className="err_msg">{errMsg}</p>
-                <div className="form__field">
-                    <label className="form__label">Date</label>
-                    <input type="date" className="form__input" value={formData.date} onChange={handleChange}
-                           name="date"/>
-                </div>
+                <form className="form" onSubmit={handleSubmit}>
+                    <div className="form__field">
+                        <label className="form__label">Date</label>
+                        <input type="date" className="form__input" value={formData.date} onChange={handleChange}
+                               name="date"/>
+                    </div>
 
-                <div className="form__field">
-                    <label className="form__label">Exercise</label>
-                    <input type="text" className="form__input" value={formData.exercise} onChange={handleChange}
-                           name="exercise"/>
-                </div>
+                    <div className="form__field">
+                        <label className="form__label">Exercise</label>
+                        <input type="text" className="form__input" value={formData.exercise} onChange={handleChange}
+                               name="exercise"/>
+                    </div>
 
-                <div className="form__field">
-                    <label className="form__label">series</label>
-                    <input type="number" className="form__input" value={formData.series} onChange={handleChange}
-                           name="series"/>
-                </div>
+                    <div className="form__field">
+                        <label className="form__label">series</label>
+                        <input type="number" className="form__input" value={formData.series} onChange={handleChange}
+                               name="series"/>
+                    </div>
 
-                <div className="form__field">
-                    <label className="form__label">weight</label>
-                    <input type="number" className="form__input" value={formData.weight} onChange={handleChange}
-                           name="weight"/>
-                </div>
+                    <div className="form__field">
+                        <label className="form__label">weight</label>
+                        <input type="number" className="form__input" value={formData.weight} onChange={handleChange}
+                               name="weight"/>
+                    </div>
 
-                <div className="form__field">
-                    <label className="form__label">the number of repetitions</label>
-                    <input type="number" className="form__input" value={formData.repetitions} onChange={handleChange}
-                           name="repetitions"/>
-                </div>
-                <button type="submit" className="btn">ADD</button>
-            </form>
+                    <div className="form__field">
+                        <label className="form__label">the number of repetitions</label>
+                        <input type="number" className="form__input" value={formData.repetitions}
+                               onChange={handleChange}
+                               name="repetitions"/>
+                    </div>
+                    <p className="err_msg">{errMsg}</p>
+                    <button type="submit" className="btn btn_add">ADD</button>
+                </form>
             }
             <table>
-                <thead>
+            <thead>
                 <tr>
                     <th>Data</th>
                     <th>Exercise</th>
