@@ -1,0 +1,49 @@
+.TrainingPlan{
+  &_header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
+  &_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 180px);
+  }
+  &_days{
+    display: flex;
+    justify-content: space-around;
+    margin: 5rem 0;
+  }
+  &_list{
+    list-style: none;
+  }
+  &_item{
+    text-align: center;
+  }
+  &_day_header{
+    text-align: center;
+    font-size: 2rem;
+  }
+  &_day_input{
+    background-color: 	#FFE4B5;
+    border: none;
+    min-height: 30px;
+    width: 200px;
+    padding: 5px;
+    &::placeholder{
+      text-align: center;
+    }
+  }
+  &_day_button{
+    background-color: olivedrab;
+    color: white;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+

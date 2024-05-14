@@ -1,6 +1,7 @@
 @import "../variables";
 
 .PhysicalActivityBody{
+  margin-bottom: 5rem;
   @media (max-width: 1600px) {
     margin: 2rem;
   }
@@ -41,6 +42,7 @@ table{
   width: 100%;
   border-collapse: collapse;
 }
+
 td, th{
   text-align: center;
  border: 1px solid black;
