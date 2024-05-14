@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus, faTrashAlt, faSave } from '@fortawesome/free-solid-svg-icons';
 import {useState, useEffect} from "react";
 import { v4 as uuidv4 } from 'uuid'
-const TrainingPlanMonday = () => {
+const TrainingPlanMonday = ({day}) => {
 
     const [MondayInput, setMondayInput] = useState('');
     const [Monday, setMonday] = useState([]);
