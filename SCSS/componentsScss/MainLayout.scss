@@ -49,6 +49,7 @@ footer{
   background-color: $primary--color;
   align-items: center;
   font-family: Arial, serif;
+  border-top: 1px solid black;
   @media (max-width: 1600px) {
     padding-inline: 3rem;
   }
