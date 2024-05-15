@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEdit, faPlus, faTrashAlt, faSave } from '@fortawesome/free-solid-svg-icons';
 import {useState, useEffect} from "react";
 import { v4 as uuidv4 } from 'uuid'
-const TrainingPlanMonday = ({day}) => {
+const TrainingPlanMonday = () => {
 
     const [MondayInput, setMondayInput] = useState('');
     const [Monday, setMonday] = useState([]);
@@ -88,7 +88,7 @@ const TrainingPlanMonday = ({day}) => {
     };
 
     return (
-        <div>
+        <div className="single_day">
             <h4 className="TrainingPlan_day_header">Monday</h4>
             <div>
                 <input type="text" className="TrainingPlan_day_input"

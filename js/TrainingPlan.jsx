@@ -15,8 +15,14 @@ const TrainingPlan = () => {
             <div className="TrainingPlan_main">
                 <div className="TrainingPlan_days">
                    <TrainingPlanMonday day="Monday"/>
+                   <TrainingPlanMonday day="Monday"/>
+                   <TrainingPlanMonday day="Monday"/>
+                   <TrainingPlanMonday day="Monday"/>
                 </div>
                 <div className="TrainingPlan_days">
+                    <TrainingPlanMonday day="Monday"/>
+                    <TrainingPlanMonday day="Monday"/>
+                    <TrainingPlanMonday day="Monday"/>
                 </div>
             </div>
         </>

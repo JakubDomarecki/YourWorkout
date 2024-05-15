@@ -6,6 +6,7 @@ import MainLayout from "../Layout/MainLayout";
 import PhysicalActivity from "./PhysicalActivity";
 import TrainingPlan from "./TrainingPlan";
 import Home from "./Home";
+import NotFound from "./notFound";
 const App = () => {
     return(
         <BrowserRouter>
@@ -14,7 +15,7 @@ const App = () => {
                     <Route path="/" element={<Home/>}/>
                     <Route path="PyhiscalActivity" element={<PhysicalActivity/>}/>
                     <Route path="TrainingPlan" element={<TrainingPlan/>}/>
-                    <Route path="*" element={<h2>Not Found</h2>} />
+                    <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
         </BrowserRouter>
