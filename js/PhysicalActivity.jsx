@@ -27,7 +27,11 @@ const PhysicalActivity = () => {
     const [isShow, setIsShow] = useState(true);
 
 
-    // pobrane dane z localStorage podczas montowania komponentu
+    const [isEditing, setIsEditing] = useState(false);
+    const [editId, setEditId] = useState(null);
+
+
+    // pobieirane z localStorage podczas montowania komponentu
     useEffect(() => {
         const storedEntries = localStorage.getItem('entries');
         if (storedEntries) {
@@ -48,7 +52,7 @@ const PhysicalActivity = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!formData.date || !formData.exercise || !formData.series || !formData.weight || !formData.repetitions) {
+        if (formData.date === "" || formData.exercise === ""|| formData.series === "" || formData.weight === "" || formData.repetitions === "") {
             setErrMsg('All fields are required.');
         } else if (formData.series <= 0 || formData.weight <= 0 || formData.repetitions <= 0) {
             setErrMsg('Series, weight, and repetitions must be greater than 0.');
@@ -135,13 +139,14 @@ const PhysicalActivity = () => {
                 </form>
             }
             <table>
-            <thead>
+                <thead>
                 <tr>
                     <th>Data</th>
                     <th>Exercise</th>
                     <th>series</th>
                     <th>weight (kg)</th>
                     <th>the number of repetitions</th>
+                    <th>buttons</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -151,29 +156,35 @@ const PhysicalActivity = () => {
                     <td>3</td>
                     <td>180</td>
                     <td>10</td>
-                    <button className="btn--delete">
-                        <FontAwesomeIcon icon={faTrashAlt} style={{color: "red", width: '50px', height: "40px"}}/>
-                    </button>
-                    <button className="btn--edite">
-                        <FontAwesomeIcon icon={faEdit} style={{color: "brown", width: '50px', height: "40px"}}/>
-                    </button>
-                </tr>
-                {entries.map((entry, index) => (
-                    <tr key={entry.id}>
-                        <td>{entry.date}</td>
-                        <td>{entry.exercise}</td>
-                        <td>{entry.series}</td>
-                        <td>{entry.weight}</td>
-                        <td>{entry.repetitions}</td>
-                        <button onClick={() => handleDelete(entry.id)} className="btn--delete">
+                    <td>
+                        <button className="btn--delete">
                             <FontAwesomeIcon icon={faTrashAlt} style={{color: "red", width: '50px', height: "40px"}}/>
                         </button>
-                        <button className="btn--edite" >
+                        <button className="btn--edite">
                             <FontAwesomeIcon icon={faEdit} style={{color: "brown", width: '50px', height: "40px"}}/>
                         </button>
-                    </tr>
+                    </td>
+                </tr>
+                {entries.map((entry, index) => (
+                    <>
+                        <tr key={entry.id}>
+                            <td>{entry.date}</td>
+                            <td>{entry.exercise}</td>
+                            <td>{entry.series}</td>
+                            <td>{entry.weight}</td>
+                            <td>{entry.repetitions}</td>
+                            <td>
+                                <button onClick={() => handleDelete(entry.id)} className="btn--delete">
+                                    <FontAwesomeIcon icon={faTrashAlt}
+                                                     style={{color: "red", width: '50px', height: "40px"}}/>
+                                </button>
+                                <button className="btn--edite" >
+                                    <FontAwesomeIcon icon={faEdit} style={{color: "brown", width: '50px', height: "40px"}}/>
+                                </button>
+                            </td>
+                        </tr>
+                    </>
                 ))}
-
                 </tbody>
             </table>
         </div>
