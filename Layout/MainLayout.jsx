@@ -3,6 +3,8 @@ import {Link, NavLink, Outlet} from "react-router-dom";
 import "../SCSS/main.scss"
 import "../SCSS/componentsScss/MainLayout.scss"
 import CustomNavLink from "../js/CustomNavLink";
+import { faHome, faRunning, faClipboardList } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 const MainLayout = () => {
 
     return (
@@ -12,14 +14,20 @@ const MainLayout = () => {
                     <h2>YourWorkout</h2>
                     <nav>
                         <ul className="header_list">
-                            <li className="list_link">
-                                <CustomNavLink to="/">Home</CustomNavLink>
+                            <li className=" list_link">
+                                <CustomNavLink to="/">
+                                    <FontAwesomeIcon icon={faHome}/> Home
+                                </CustomNavLink>
                             </li>
                             <li className="list_link">
-                                <CustomNavLink to="/PyhiscalActivity">Physical Activity</CustomNavLink>
+                                <CustomNavLink to="/PyhiscalActivity">
+                                    <FontAwesomeIcon icon={faRunning}/>Physical Activity
+                                </CustomNavLink>
                             </li>
                             <li className="list_link">
-                                <CustomNavLink to="TrainingPlan">Training Plan</CustomNavLink>
+                                <CustomNavLink to="TrainingPlan">
+                                    <FontAwesomeIcon icon={faClipboardList}/> Training Plan
+                                </CustomNavLink>
                             </li>
                         </ul>
                     </nav>
@@ -28,24 +36,25 @@ const MainLayout = () => {
                 <Outlet/>
 
                 <footer>
-                <div className="footer_contact">
+                    <div className="footer_contact">
                         <div className="footer_contact_home">
                             <ul className="header_list">
-                                <li className="list_link_footer_home">
-                                    <CustomNavLink to="/">Home</CustomNavLink>
+                                <li className=" list_link">
+                                    <CustomNavLink to="/">
+                                        <FontAwesomeIcon icon={faHome} /> Home
+                                    </CustomNavLink>
                                 </li>
                                 <li className="list_link">
-                                    <CustomNavLink to="/PyhiscalActivity">Physical Activity</CustomNavLink>
+                                    <CustomNavLink to="/PyhiscalActivity">
+                                        <FontAwesomeIcon icon={faRunning}/>Physical Activity
+                                    </CustomNavLink>
                                 </li>
                                 <li className="list_link">
-                                    <CustomNavLink to="TrainingPlan">Training Plan</CustomNavLink>
+                                    <CustomNavLink to="TrainingPlan">
+                                        <FontAwesomeIcon icon={faClipboardList} /> Training Plan
+                                    </CustomNavLink>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="footer_contacts">
-                            <p>Contact</p>
-                            <p>+48 123 456 789</p>
-                            <p>email: qwerty@gmail.com</p>
                         </div>
                     </div>
                     <div className="footer_logo">

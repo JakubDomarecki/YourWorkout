@@ -7,6 +7,9 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  &_header{
+    margin-bottom: 2rem;
+  }
   @media (max-width: 560px) {
     height: 50%;
     margin: 0 ;
@@ -23,6 +26,11 @@ main{
     margin: 5rem;
   }
 }
+.home_photo{
+  display: flex;
+  align-items: flex-end;
+}
+
 .home_img{
   @media (max-width: 1400px) {
     width: 700px;
@@ -39,7 +47,8 @@ main{
     height: 400px;
     margin-top: 0;
   }
-  @media (max-width: 560px) {
-    display: none;
+  @media (max-width: 410px) {
+    width: 200px;
+    height: 200px;
   }
 }

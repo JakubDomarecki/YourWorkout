@@ -2,8 +2,7 @@ import React, {useEffect, useState} from "react";
 import "../SCSS/main.scss"
 import "../SCSS/componentsScss/physicalActivity.scss"
 import { v4 as uuidv4 } from 'uuid'; // Import funkcji generującej UUID
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faPlus, faTimes, faEyeSlash, faEye, faTrashAlt,faHome, faRunning, faClipboardList} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const PhysicalActivity = () => {
@@ -132,7 +131,17 @@ const PhysicalActivity = () => {
             <h2 className="h2_description">
                 Enter training information in the fields to be able to track and enjoy your progress
             </h2>
-            <button onClick={handleToogleButtonShow} className="toogle_button btn">{isShow ? "hide form" : "show form"}</button>
+            <button onClick={handleToogleButtonShow} className="toogle_button btn">
+                {isShow ? (
+                    <>
+                        <FontAwesomeIcon icon={faEyeSlash} /> Hide form
+                    </>
+                ) : (
+                    <>
+                        <FontAwesomeIcon icon={faEye} /> Show form
+                    </>
+                )}
+            </button>
 
             {isShow &&
                 <form className="form" onSubmit={handleSubmit}>
@@ -168,8 +177,22 @@ const PhysicalActivity = () => {
                     </div>
                     <p className="err_msg">{errMsg}</p>
                     <div className="form_buttons">
-                        <button type="submit" className="btn btn_add">{isEditing ? "update" : "add"}</button>
-                        {isEditing && <button type="button" className="btn btn_cancel" onClick={handleCancelEdit}>Cancel</button>}
+                        <button type="submit" className="btn btn_add">
+                            {isEditing ? (
+                                <>
+                                    <FontAwesomeIcon icon={faEdit}/> Update
+                                </>
+                            ) : (
+                                <>
+                                    <FontAwesomeIcon icon={faPlus}/> Add
+                                </>
+                            )}
+                        </button>
+                        {isEditing && (
+                            <button type="button" className="btn btn_cancel" onClick={handleCancelEdit}>
+                                <FontAwesomeIcon icon={faTimes} /> Cancel
+                            </button>
+                        )}
                     </div>
                 </form>
             }

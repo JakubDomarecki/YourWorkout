@@ -17,6 +17,10 @@ header{
   @media (max-width: 540px) {
     height: 280px;
   }
+  @media (max-width: 380px) {
+    height: 330px;
+  }
+
 }
 .header_list{
   display: flex;
@@ -24,7 +28,6 @@ header{
   @media (max-width: 400px) {
     display: flex;
     flex-direction: column;
-    text-align: center;
   }
   @media (max-width: 540px) {
     padding: 4rem;
@@ -69,22 +72,15 @@ footer{
     height: 400px;
   }
 }
-.footer_contact{
- display: flex;
-  @media (max-width: 540px ) {
-    display: flex;
-    flex-direction: column;
-  }
-}
 .footer_contact_home{
   margin-right: 3rem;
   @media (max-width: 540px ) {
     text-align: center;
   }
 }
-.list_link_footer_home{
-  margin: 0;
-}
+//.list_link_footer_home{
+//  margin: 0;
+//}
 .list_link_footer_home a{
   text-decoration: none;
 }

@@ -6,6 +6,9 @@
     justify-content: center;
     margin-top: 3rem;
     font-size: 2rem;
+    @media (max-width: 440px) {
+      text-align: center;
+    }
   }
   //&_main{
   //  display: flex;
@@ -17,6 +20,14 @@
     display: flex;
     justify-content: space-around;
     margin: 5rem 0;
+    @media (max-width: 1360px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 770px) {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
   }
   &_list{
     list-style: none;
@@ -66,8 +77,8 @@
 }
 .single_day{
   background-color: 	#FFE4B5;
-  transition: width 0.3s ease-in-out;
-  width: 35%;
+  transition: width 0.5s ease-in-out;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;;
@@ -77,10 +88,66 @@
   padding: 1rem;
   &:hover{
     background-color: 	#FFE4B5;
-    width: 40%;
+    width: 30%;
     box-shadow: -10px -10px 5px #ff8c00;
+    @media (max-width: 1050px) {
+      &:hover{
+        width: 40%;
+      }
+    }
+    @media (max-width: 760px) {
+      &:hover{
+        width: 60%;
+      }
+    }
+    @media (max-width: 520px) {
+      &:hover{
+        width: 70%;
+      }
+    }
+    @media (max-width: 450px) {
+      &:hover{
+        width: 80%;
+      }
+    }
+    @media (max-width: 390px) {
+      &:hover{
+        width: 90%;
+      }
+    }
   }
 }
 
+.Api_exercises{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &_header{
+    margin-bottom: 3rem;
+  }
+  &_item{
+    list-style: none;
+    margin: 2rem;
+    border-bottom: 1px solid black;
+    &:last-of-type{
+      border-bottom: none;
+    }
+  }
+  &_item h3{
+    margin-bottom: 10px;
+  }
+}
+.loading{
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
+.api_name{
+  font-weight: bold;
+}
+.api_p{
+  margin-bottom: 5px;
+}

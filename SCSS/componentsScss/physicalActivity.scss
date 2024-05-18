@@ -33,12 +33,19 @@
     padding-left: 0.5rem;
   }
   &_buttons{
-    display: flex;
+    @media (max-width: 420px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+    }
   }
   }
 .btn_add{
-  align-self: flex-start;
-  margin-right: 2rem;
+  margin-right: 1rem;
+  @media (max-width: 420px) {
+    margin-right: 0;
+  }
 }
 //table
 table{
@@ -62,7 +69,15 @@ td, th{
 }
 
 
+@media (max-width: 600px) {
+  th {
+    display: none; /* Ukryj nagłówki na małych ekranach */
+  }
 
+  td {
+    display: block;
+  }
+}
 
 
 

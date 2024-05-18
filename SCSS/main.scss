@@ -1,6 +1,7 @@
 @import "variables";
 body{
   background-color: orange;
+  font-family: Arial,sans-serif;
 }
 *{
   padding: 0;
@@ -13,7 +14,6 @@ body{
   margin: 0 auto;
 }
 main{
-  //height: calc(100vh - 180px);
   display: flex;
   align-items: center;
   @media (max-width: 1600px) {
@@ -49,10 +49,6 @@ q{
 .err_msg{
   color: red;
   margin-bottom: 1rem;
-}
-.home_photo{
-  display: flex;
-  align-items: flex-end;
 }
 .notFound{
   width: 100%;

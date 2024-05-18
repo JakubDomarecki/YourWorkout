@@ -1,10 +1,11 @@
 import "../SCSS/main.scss"
 import "../SCSS/componentsScss/home.scss"
+
 const Home = () => {
    return (
      <main>
          <div className='home_description'>
-             <h2>YourWorkout</h2>
+             <h2 className="home_description_header">YourWorkout</h2>
              <p>YourWorkout is a website that integrates the functions of monitoring physical activity, allowing you to
                  choice
                  personalized training plans. It is a kind of "fitness friend" that helps
