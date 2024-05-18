@@ -164,7 +164,7 @@ const PhysicalActivity = () => {
                     </div>
 
                     <div className="form__field">
-                        <label className="form__label">weight</label>
+                        <label className="form__label">weight (kg)</label>
                         <input type="number" className="form__input" value={formData.weight} onChange={handleChange}
                                name="weight"/>
                     </div>

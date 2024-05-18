@@ -1,4 +1,5 @@
-@import "../variables";
+@import "../colors";
+@import "../variables/fonts";
 header{
   display: flex;
   justify-content: space-between;
@@ -6,6 +7,7 @@ header{
   height: 90px;
   background-color: $primary--color;
   border-bottom: 1px solid black;
+  font-family: newFont, sans-serif;
   @media (max-width: 1600px) {
     padding-inline: 3rem;
   }
@@ -51,7 +53,7 @@ footer{
   height: 90px;
   background-color: $primary--color;
   align-items: center;
-  font-family: Arial, serif;
+  font-family: newFont, sans-serif;
   border-top: 1px solid black;
   @media (max-width: 1600px) {
     padding-inline: 3rem;
