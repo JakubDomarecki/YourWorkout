@@ -13,7 +13,9 @@ body{
   margin: 0 auto;
 }
 main{
-  height: calc(100vh - 180px);
+  //height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
   @media (max-width: 1600px) {
     padding-inline: 3rem;
   }

@@ -50,7 +50,7 @@ const TrainingPlanMonday = () => {
         }
     }, []);
 
-    //usuwanko
+    //usuwanie
     const handleDelete = (id) => {
         const newList = Monday.filter(item => item.id !== id)
         setMonday(newList)

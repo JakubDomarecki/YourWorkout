@@ -27,8 +27,8 @@ const PhysicalActivity = () => {
     const [isShow, setIsShow] = useState(true);
 
 
-    const [isEditing, setIsEditing] = useState(false);
-    const [editId, setEditId] = useState(null);
+    // const [isEditing, setIsEditing] = useState(false);
+    // const [editId, setEditId] = useState(null);
 
 
     // pobieirane z localStorage podczas montowania komponentu
@@ -43,10 +43,7 @@ const PhysicalActivity = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+        setFormData(prevState => ({...prevState, [name]: value}));
     };
 
     const handleSubmit = (e) => {
@@ -165,8 +162,7 @@ const PhysicalActivity = () => {
                         </button>
                     </td>
                 </tr>
-                {entries.map((entry, index) => (
-                    <>
+                {entries.map((entry) => (
                         <tr key={entry.id}>
                             <td>{entry.date}</td>
                             <td>{entry.exercise}</td>
@@ -183,7 +179,6 @@ const PhysicalActivity = () => {
                                 </button>
                             </td>
                         </tr>
-                    </>
                 ))}
                 </tbody>
             </table>
