@@ -30,6 +30,13 @@ main{
   width: 150px;
   background-color: $secondary--color;
   color: $primary--color;
+  border-radius: 1rem;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover{
+    background-color: $primary--color;
+    color: $secondary--color;
+  }
 
 }
 .h2_description{

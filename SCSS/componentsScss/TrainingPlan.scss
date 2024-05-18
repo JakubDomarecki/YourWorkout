@@ -44,18 +44,21 @@
     color: white;
     width: 30px;
     height: 30px;
+    cursor: pointer;
   }
 }
 
 .btn--edit{
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 .save_btn{
   width: 30px;
   height: 30px;
   background-color: transparent;
   border: transparent;
+  cursor: pointer;
 }
 .errMessage{
   text-align: center;
