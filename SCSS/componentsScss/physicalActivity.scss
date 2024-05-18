@@ -32,11 +32,14 @@
     line-height: 2.625rem;
     padding-left: 0.5rem;
   }
+  &_buttons{
+    display: flex;
+  }
   }
 .btn_add{
   align-self: flex-start;
+  margin-right: 2rem;
 }
-
 //table
 table{
   width: 100%;

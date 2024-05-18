@@ -27,8 +27,8 @@ const PhysicalActivity = () => {
     const [isShow, setIsShow] = useState(true);
 
 
-    // const [isEditing, setIsEditing] = useState(false);
-    // const [editId, setEditId] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editId, setEditId] = useState(null);
 
 
     // pobieirane z localStorage podczas montowania komponentu
@@ -57,11 +57,21 @@ const PhysicalActivity = () => {
             setErrMsg("");
             setErrMsgOFF(false);
 
-            const newEntry = {...formData, id: uuidv4()};
+            if (isEditing) {
+                const updatedEntries = entries.map(entry =>
+                entry.id === editId ? {...formData, id: editId} : entry
+                );
+                setEntries(updatedEntries);
+                localStorage.setItem('entries', JSON.stringify(updatedEntries));
+                setIsEditing(false);
+                setEditId(null);
+            } else {
+                const newEntry = {...formData, id: uuidv4()};
 
-            setEntries(prevState => [...prevState, newEntry])
+                setEntries(prevState => [...prevState, newEntry])
 
-            localStorage.setItem('entries', JSON.stringify([...entries, newEntry]));
+                localStorage.setItem('entries', JSON.stringify([...entries, newEntry]));
+            }
 
             setFormData({
                 date: '',
@@ -78,6 +88,31 @@ const PhysicalActivity = () => {
         setEntries(newEntries);
         localStorage.setItem('entries', JSON.stringify(newEntries))
     }
+
+    const handleEdit = (entry) => {
+        setIsEditing(true);
+        setEditId(entry.id);
+        setFormData({
+            date: entry.date,
+            exercise: entry.exercise,
+            series: entry.series,
+            weight: entry.weight,
+            repetitions: entry.repetitions,
+        });
+        setIsShow(true);
+    }
+
+    const handleCancelEdit = () => {
+        setIsEditing(false);
+        setEditId(null);
+        setFormData({
+            date: '',
+            exercise: '',
+            series: 0,
+            weight: 0,
+            repetitions: 0
+        });
+    };
 
     const handleToogleButtonShow = () => {
         if(isShow){
@@ -132,7 +167,10 @@ const PhysicalActivity = () => {
                                name="repetitions"/>
                     </div>
                     <p className="err_msg">{errMsg}</p>
-                    <button type="submit" className="btn btn_add">ADD</button>
+                    <div className="form_buttons">
+                        <button type="submit" className="btn btn_add">{isEditing ? "update" : "add"}</button>
+                        {isEditing && <button type="button" className="btn btn_cancel" onClick={handleCancelEdit}>Cancel</button>}
+                    </div>
                 </form>
             }
             <table>
@@ -174,7 +212,7 @@ const PhysicalActivity = () => {
                                     <FontAwesomeIcon icon={faTrashAlt}
                                                      style={{color: "red", width: '50px', height: "40px"}}/>
                                 </button>
-                                <button className="btn--edite" >
+                                <button className="btn--edite" onClick={e => handleEdit(entry)}>
                                     <FontAwesomeIcon icon={faEdit} style={{color: "brown", width: '50px', height: "40px"}}/>
                                 </button>
                             </td>
