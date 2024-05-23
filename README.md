@@ -12,11 +12,10 @@ YourWorkout is a website that integrates activity monitoring functions and allow
 2. Install dependencies: npm install
 3. Run the development server: npm run dev
 
-## API
-- To download data from the API, you must provide your API key
-- Create an account on api ninjas and find your key
+## FAQ
+### How to download data from API
+- To download data from the API, you must provide your API key. Create an account on api ninjas and find your key
 
- 
 ## Technologies Used
 - Vite,
 - React
