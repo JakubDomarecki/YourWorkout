@@ -17,7 +17,7 @@ const PhysicalActivity = () => {
 
     //wpisy
     const [entries, setEntries] = useState([]);
-    //errMessage
+    //walidacja
     const [errMsg, setErrMsg] = useState("");
     const [errMsgOFF, setErrMsgOFF] = useState(false);
 
@@ -25,12 +25,12 @@ const PhysicalActivity = () => {
     //pokazuje formularz
     const [isShow, setIsShow] = useState(true);
 
-
+    // state do edytowania
     const [isEditing, setIsEditing] = useState(false);
     const [editId, setEditId] = useState(null);
 
 
-    // pobieirane z localStorage podczas montowania komponentu
+    // pobieranie z localStorage
     useEffect(() => {
         const storedEntries = localStorage.getItem('entries');
         if (storedEntries) {
@@ -39,12 +39,14 @@ const PhysicalActivity = () => {
     }, []);
 
 
-
+    //zapisywanie danych z inputów
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({...prevState, [name]: value}));
     };
 
+
+    //walidacja, zapis edytowania i dodawanie wpisu
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -70,24 +72,27 @@ const PhysicalActivity = () => {
                 setEntries(prevState => [...prevState, newEntry])
 
                 localStorage.setItem('entries', JSON.stringify([...entries, newEntry]));
+
+                setFormData({
+                    date: '',
+                    exercise: '',
+                    series: 0,
+                    weight: 0,
+                    repetitions: 0
+                });
             }
 
-            setFormData({
-                date: '',
-                exercise: '',
-                series: 0,
-                weight: 0,
-                repetitions: 0
-            });
         }
     };
 
+    //usuwanie
     const handleDelete = (id) => {
         const newEntries = entries.filter(entry => entry.id !== id);
         setEntries(newEntries);
         localStorage.setItem('entries', JSON.stringify(newEntries))
     }
 
+    //pobieranie danych do edytowania
     const handleEdit = (entry) => {
         setIsEditing(true);
         setEditId(entry.id);
@@ -101,6 +106,7 @@ const PhysicalActivity = () => {
         setIsShow(true);
     }
 
+    //cancel edytowania
     const handleCancelEdit = () => {
         setIsEditing(false);
         setEditId(null);
@@ -113,12 +119,9 @@ const PhysicalActivity = () => {
         });
     };
 
+    //przelaczanie formularza on/off
     const handleToogleButtonShow = () => {
-        if(isShow){
-            setIsShow(false)
-        } else {
-            setIsShow(true)
-        }
+        setIsShow(prevState => !prevState);
     };
 
     return (
@@ -208,21 +211,6 @@ const PhysicalActivity = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>13.05.2024</td>
-                    <td>Deadlift</td>
-                    <td>3</td>
-                    <td>180</td>
-                    <td>10</td>
-                    <td>
-                        <button className="btn--delete">
-                            <FontAwesomeIcon icon={faTrashAlt} style={{color: "red", width: '50px', height: "40px"}}/>
-                        </button>
-                        <button className="btn--edite">
-                            <FontAwesomeIcon icon={faEdit} style={{color: "brown", width: '50px', height: "40px"}}/>
-                        </button>
-                    </td>
-                </tr>
                 {entries.map((entry) => (
                         <tr key={entry.id}>
                             <td>{entry.date}</td>

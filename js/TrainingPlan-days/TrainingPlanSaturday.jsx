@@ -20,8 +20,7 @@ const TrainingPlanSaturday = () => {
     const [errMessage, setErrMessage] = useState('');
     const [errMessageEdite, setErrMessageEdite] = useState('');
 
-    const [isEditing, setIsEditing] = useState(false);
-    const [editId, setEditId] = useState(null);
+
 
     //wartosci ktore wpisał uzytkownik
     const handleSaturdayInput = (e) => {
@@ -64,13 +63,13 @@ const TrainingPlanSaturday = () => {
     };
 
 
-    //do przycsisku edtyowanie
+    //przycisk edytowania
     const handleEdit = (item) => {
         setEditingItem(item);
         setEditedItemName(item.name);
     };
 
-    //za[isywanie
+    //zapisywanie
     const handleSaveEdit = () => {
         if (editedItemName === "") {
             setErrMessageEdite('the field cannot be empty')

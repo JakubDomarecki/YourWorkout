@@ -11,15 +11,17 @@ import TrainingPlanSaturday from "./TrainingPlan-days/TrainingPlanSaturday";
 import TrainingPlanSunday from "./TrainingPlan-days/TrainingPlanSunday";
 
 
-
 const TrainingPlan = () => {
+
+    //dane z api
     const [exercises, setExercises] = useState([]);
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    //pobieranie danych z api
     useEffect(() => {
-        const apiKey = 'PoXag5sPExV/gSY3oU4JNA==lIFNdtTpX9HThsnO';
+        const apiKey = import.meta.env.VITE_API_KEY;
 
         fetch(`https://api.api-ninjas.com/v1/exercises?muscle`, {
             method: 'GET',
