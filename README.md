@@ -18,6 +18,13 @@ YourWorkout is a website that integrates activity monitoring functions and allow
 - localStorage
 - Fetch
 
+## FEATURES
+- Responsive Web Design (RWD)
+- Player progress is saved using localStorage
+- Adding, deleting and editing
+- Downloading data from api
+
+
 
 
 
