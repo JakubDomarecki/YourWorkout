@@ -48,43 +48,46 @@ const TrainingPlan = () => {
     }, []);
 
 
-    if (loading) return <div className="loading">Loading...</div>;
-    if (error) return <div className="loading">Error: {error}</div>;
-
-    return (
-        <>
-            <div className="TrainingPlan_header">
+    if (loading) {
+        return <div className="loading">Loading...</div>;
+    } else if (error) {
+        return <div className="loading">Error: {error}</div>;
+    } else {
+        return (
+            <>
+                <div className="TrainingPlan_header">
                     <h2>Your training plan</h2>
-            </div>
-            <div className="TrainingPlan_main">
-                <div className="TrainingPlan_days">
-                   <TrainingPlanMonday/>
-                   <TrainingPlanTuesday/>
-                   <TrainingPlanWednesday/>
-                   <TrainingPlanThursday/>
                 </div>
-                <div className="TrainingPlan_days">
-                    <TrainingPlanFriday/>
-                    <TrainingPlanSaturday/>
-                    <TrainingPlanSunday/>
+                <div className="TrainingPlan_main">
+                    <div className="TrainingPlan_days">
+                        <TrainingPlanMonday/>
+                        <TrainingPlanTuesday/>
+                        <TrainingPlanWednesday/>
+                        <TrainingPlanThursday/>
+                    </div>
+                    <div className="TrainingPlan_days">
+                        <TrainingPlanFriday/>
+                        <TrainingPlanSaturday/>
+                        <TrainingPlanSunday/>
+                    </div>
+                    <div className="Api_exercises">
+                        <h2 className="Api_exercises_header">Example exercises</h2>
+                        <ul className="Api_exercises_list">
+                            {exercises.map((exercise, index) => (
+                                <li key={index} className="Api_exercises_item">
+                                    <h3>{exercise.name}</h3>
+                                    <p className="api_p"><span className="api_name">Muscle: </span>{exercise.muscle}</p>
+                                    <p className="api_p"><span className="api_name">Equipment: </span>{exercise.equipment}</p>
+                                    <p className="api_p"><span className="api_name">Difficulty: </span>{exercise.difficulty}</p>
+                                    <p className="api_p"><span className="api_name">Instructions: </span>{exercise.instructions}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-                <div className="Api_exercises">
-                    <h2 className="Api_exercises_header">Example exercises</h2>
-                    <ul className="Api_exercises_list">
-                        {exercises.map((exercise, index) => (
-                            <li key={index} className="Api_exercises_item">
-                                <h3>{exercise.name}</h3>
-                                <p className="api_p"><span className="api_name">Muscle: </span>{exercise.muscle}</p>
-                                <p className="api_p"><span className="api_name">Equipment: </span>{exercise.equipment}</p>
-                                <p className="api_p"><span className="api_name">Difficulty: </span>{exercise.difficulty}</p>
-                                <p className="api_p"><span className="api_name">Instructions: </span>{exercise.instructions}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </>
+            </>
 
-    );
+        );
+    }
 };
 export default TrainingPlan;
