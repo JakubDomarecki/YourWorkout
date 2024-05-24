@@ -10,7 +10,7 @@ const Home = () => {
                  choice
                  personalized training plans. It is a kind of "fitness friend" that helps
                  users to follow
-                 their progress, motivates them to achieve their goals and supports them in the process of a healthy
+                 their progress, motivates them to achieve their goals
              </p>
          </div>
          <div className="home_photo">
