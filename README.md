@@ -8,9 +8,15 @@ YourWorkout is a website that integrates activity monitoring functions and allow
 
 ## How to Get Started
 
-1. Clone the repository: git clone repository_address
-2. Install dependencies: npm install
-3. Run the development server: npm run dev
+1. Clone the repository:
+   ```sh
+   git clone repository_address
+2. Install dependencies:
+   ```sh
+   npm install
+3. Run the development server:
+   ```sh
+   npm run dev
 
 ## Technologies Used
 - Vite,
