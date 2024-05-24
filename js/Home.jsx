@@ -1,7 +1,9 @@
 import "../SCSS/main.scss"
 import "../SCSS/componentsScss/home.scss"
-
+import  photoHome from "../images/home_photo.png"
 const Home = () => {
+
+
    return (
      <main>
          <div className='home_description'>
@@ -14,7 +16,7 @@ const Home = () => {
              </p>
          </div>
          <div className="home_photo">
-            <img alt="home_photo" src="../images/home_photo.png" className="home_img"/>
+            <img alt="home_photo" src={photoHome} className="home_img"/>
          </div>
 
      </main>
