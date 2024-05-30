@@ -25,13 +25,14 @@ YourWorkout is a website that integrates activity monitoring functions and allow
    npm run dev
 
 ## Technologies Used
-- Vite,
+- JavaScript
 - React
-- Hooks,
+- Hooks
 - Routing using React Router
+- Fetch
 - Sass
 - localStorage
-- Fetch
+- Vite
 
 ## FEATURES
 - Responsive Web Design (RWD)
