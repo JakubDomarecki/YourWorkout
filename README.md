@@ -1,3 +1,9 @@
+## Explore my app:
+
+If you want to see how my application works in action, you can check it out [here](https://yourowkrout.netlify.app/).
+
+
+
 # YourWorkout
  YourWorkout helps you track your progress and create your own training plan
  
@@ -8,18 +14,25 @@ YourWorkout is a website that integrates activity monitoring functions and allow
 
 ## How to Get Started
 
-1. Clone the repository: git clone repository_address
-2. Install dependencies: npm install
-3. Run the development server: npm run dev
+1. Clone the repository:
+   ```sh
+   git clone repository_address
+2. Install dependencies:
+   ```sh
+   npm install
+3. Run the development server:
+   ```sh
+   npm run dev
 
 ## Technologies Used
-- Vite,
+- JavaScript
 - React
-- Hooks,
+- Hooks
 - Routing using React Router
+- Fetch
 - Sass
 - localStorage
-- Fetch
+- Vite
 
 ## FEATURES
 - Responsive Web Design (RWD)
@@ -34,8 +47,7 @@ YourWorkout is a website that integrates activity monitoring functions and allow
 
 ### You can add your own plan depending on the days of the week and below you will find sample exercises, their description and level of advancement.
 
-![image](https://github.com/JakubDomarecki/YourWorkout/assets/160236789/c76a799e-3d81-4008-80bd-895947bd35ac)
-
+![3](https://github.com/JakubDomarecki/YourWorkout/assets/160236789/d7773543-0b8b-42a5-9fcd-eeb3939a3591)
 
 
 ## FAQ
