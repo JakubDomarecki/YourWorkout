@@ -29,7 +29,7 @@ YourWorkout is a website that integrates activity monitoring functions and allow
 - React
 - Hooks
 - Routing using React Router
-- Fetch
+- REST API
 - Sass
 - localStorage
 - Vite
